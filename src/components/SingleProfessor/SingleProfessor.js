@@ -13,6 +13,7 @@ import {
 } from "recharts";
 import { MdRateReview } from "react-icons/md";
 import { MdCompare } from "react-icons/md";
+import { useLocation } from "react-router-dom";
 
 // Example data for the bar chart
 const data = [
@@ -44,16 +45,13 @@ const TriangleBar = (props) => {
 };
 
 export default function SingleProfessor() {
+  const location = useLocation();
+  const { response } = location.state || { response: "No response available" };
+
   return (
     <div>
       <Container>
-        <Grid
-          container
-          spacing={2}
-          style={{
-            margin: "50px 0px",
-          }}
-        >
+        <Grid container spacing={2} style={{ margin: "50px 0px" }}>
           <Grid item xs={12} md={6}>
             <div
               style={{
@@ -63,40 +61,14 @@ export default function SingleProfessor() {
                 gap: "10px",
               }}
             >
-              <span
-                style={{
-                  fontSize: "100px",
-                  fontWeight: "bold",
-                }}
-              >
-                4.5
-              </span>
-              <sup
-                style={{
-                  fontSize: "20px",
-                  fontWeight: "bold",
-                }}
-              >
-                {" "}
-                / 5
-              </sup>
+              <span style={{ fontSize: "100px", fontWeight: "bold" }}>4.5</span>
+              <sup style={{ fontSize: "20px", fontWeight: "bold" }}> / 5</sup>
             </div>
             <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                gap: "20px",
-              }}
+              style={{ display: "flex", flexDirection: "column", gap: "20px" }}
             >
               <span>Overall Ratings Based on 22 students</span>
-              <span
-                style={{
-                  fontSize: "50px",
-                  fontWeight: "bold",
-                }}
-              >
-                XYZ
-              </span>
+              <span style={{ fontSize: "50px", fontWeight: "bold" }}>XYZ</span>
               <span>
                 Professor in the Mathematics department at ABC University
                 Ratings Based on 22 students
@@ -147,23 +119,9 @@ export default function SingleProfessor() {
             </div>
           </Grid>
 
-          <Grid
-            item
-            xs={12}
-            md={6}
-            style={{
-              height: "50vh",
-            }}
-          >
+          <Grid item xs={12} md={6} style={{ height: "50vh" }}>
             <ResponsiveContainer width="100%" height="100%">
-              <BarChart
-                data={data}
-                margin={{
-                  top: 20,
-                  right: 30,
-                  bottom: 5,
-                }}
-              >
+              <BarChart data={data} margin={{ top: 20, right: 30, bottom: 5 }}>
                 <CartesianGrid strokeDasharray="3 3" />
                 <XAxis dataKey="name" />
                 <YAxis />
@@ -196,7 +154,6 @@ export default function SingleProfessor() {
                   alignItems: "center",
                   gap: "50px",
                   backgroundColor: "var(--info-bg)",
-
                   borderRadius: "10px",
                   boxShadow: "0 4px 8px rgba(0, 0, 0, 0.2)",
                 }}
@@ -219,13 +176,7 @@ export default function SingleProfessor() {
                   >
                     5.00
                   </div>
-                  <div
-                    style={{
-                      color: "#303d40",
-                    }}
-                  >
-                    Asfand
-                  </div>
+                  <div style={{ color: "#303d40" }}>Asfand</div>
                 </div>
                 <div
                   style={{
@@ -245,13 +196,7 @@ export default function SingleProfessor() {
                   >
                     5.00
                   </div>
-                  <div
-                    style={{
-                      color: "#303d40",
-                    }}
-                  >
-                    Asfand
-                  </div>
+                  <div style={{ color: "#303d40" }}>Asfand</div>
                 </div>
                 <div
                   style={{
@@ -271,18 +216,16 @@ export default function SingleProfessor() {
                   >
                     5.00
                   </div>
-                  <div
-                    style={{
-                      color: "#303d40",
-                    }}
-                  >
-                    Asfand
-                  </div>
+                  <div style={{ color: "#303d40" }}>Asfand</div>
                 </div>
               </div>
             </div>
           </Grid>
         </Grid>
+        <div>
+          <h2>Bio:</h2>
+          <p>{response}</p>
+        </div>
       </Container>
     </div>
   );
