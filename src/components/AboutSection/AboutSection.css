@@ -61,3 +61,19 @@
     font-size: 0.9rem;
   }
 }
+
+@keyframes missileAnimation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+.animated-icon {
+  animation: missileAnimation 1s ease-in-out infinite;
+}

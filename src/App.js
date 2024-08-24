@@ -4,6 +4,7 @@ import SingleProfessor from "./components/SingleProfessor/SingleProfessor";
 import Home from "./Pages/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Professors from "./Pages/Professors";
+import Compare from "./Pages/Compare";
 // import TestPage from "./Pages/TestPage";
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/professor" element={<SingleProfessor />} />
           <Route path="/all-professors" element={<Professors />} />
+          <Route path="/compare/:id" element={<Compare />} />
           {/* <Route path="/test" element={<TestPage />} /> */}
         </Routes>
       </BrowserRouter>

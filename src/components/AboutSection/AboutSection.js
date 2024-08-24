@@ -3,6 +3,7 @@ import "./AboutSection.css";
 import { RiTeamFill } from "react-icons/ri";
 import { IoEye } from "react-icons/io5";
 import { GiSubmarineMissile } from "react-icons/gi";
+import EyeAnimation from "../Animations/EyeAnimation/EyeAnimation";
 
 const AboutSection = () => {
   return (
@@ -19,6 +20,7 @@ const AboutSection = () => {
         <div className="about-info">
           <div className="info-item">
             <GiSubmarineMissile
+              className="animated-icon"
               style={{
                 fontSize: "50px",
               }}
@@ -31,11 +33,12 @@ const AboutSection = () => {
             </p>
           </div>
           <div className="info-item">
-            <IoEye
+            {/* <IoEye
               style={{
                 fontSize: "50px",
               }}
-            />
+            /> */}
+            <EyeAnimation />
             <h3 className="info-heading">Our Vision</h3>
             <p className="info-text">
               To be the leading resource for students seeking detailed and
